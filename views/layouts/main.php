@@ -183,6 +183,14 @@ AppAsset::register($this);
                   </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?php echo Yii::$app->request->baseUrl; ?>/admin" class="nav-link">
+                  <i class="nav-icon fa fa-user"></i>
+                  <p>
+                    Data Admin
+                  </p>
+                </a>
+              </li>
             </ul>
           </nav>
           <!-- /.sidebar-menu -->

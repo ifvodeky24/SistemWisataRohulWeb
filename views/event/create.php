@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Event */
 
-$this->title = 'Create Event';
-$this->params['breadcrumbs'][] = ['label' => 'Events', 'url' => ['index']];
+$this->title = 'Tambah Data Event';
+$this->params['breadcrumbs'][] = ['label' => 'Data Event', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="event-create">

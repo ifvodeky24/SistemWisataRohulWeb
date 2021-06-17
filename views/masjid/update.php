@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Masjid */
 
-$this->title = 'Update Masjid: ' . $model->id_masjid;
-$this->params['breadcrumbs'][] = ['label' => 'Masjids', 'url' => ['index']];
+$this->title = 'Perbarui Data Masjid: ' . $model->id_masjid;
+$this->params['breadcrumbs'][] = ['label' => 'Data Masjid', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_masjid, 'url' => ['view', 'id' => $model->id_masjid]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Perbarui';
 ?>
 <div class="masjid-update">
 

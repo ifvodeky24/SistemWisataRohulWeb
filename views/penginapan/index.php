@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\PenginapanSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Penginapans';
+$this->title = 'Data Penginapan';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="penginapan-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Penginapan', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Penginapan', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -30,9 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'nama_penginapan',
             'alamat',
             'pemilik',
-            'latitude',
+            // 'latitude',
             //'longitude',
-            //'foto',
+            'foto',
             //'informasi',
             //'createdAt',
             //'updatedAt',

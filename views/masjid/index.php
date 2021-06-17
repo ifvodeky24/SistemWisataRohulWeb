@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\MasjidSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Masjids';
+$this->title = 'Data Masjid';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="masjid-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Masjid', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Masjid', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'kecamatan',
             //'latitude',
             //'longitude',
-            //'foto',
+            'foto',
             //'informasi',
             //'createdAt',
             //'updatedAt',

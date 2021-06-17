@@ -26,10 +26,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'informasi')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'createdAt')->textInput() ?>
-
-    <?= $form->field($model, 'updatedAt')->textInput() ?>
-
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

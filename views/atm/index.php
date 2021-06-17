@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\AtmSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Atms';
+$this->title = 'Data ATM';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="atm-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Atm', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data ATM', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

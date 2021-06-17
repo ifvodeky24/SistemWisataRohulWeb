@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\AdminSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Admins';
+$this->title = 'Data Admin';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="admin-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Admin', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Admin', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -28,11 +28,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id_admin',
             'username',
-            'password',
+            // 'password',
             'nama_lengkap',
-            'authKey',
+            // 'authKey',
             //'accessToken',
-            //'foto',
+            [
+                'label'=>'foto',
+                'format'=>'raw',
+                'value' => function($data){
+                    $url = Yii::$app->getHomeUrl(). "/files/images/admin_images/" .$data['foto'];
+                    return Html::img($url, ['alt'=>'Gambar Tidak Ada', 'class'=>'img-circle user-img',
+                        'height'=>'100', 'width'=>'100', 'style'=>'object-fit: cover']);
+                }
+            ],
             //'createdAt',
             //'updatedAt',
 

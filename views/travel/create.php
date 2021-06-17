@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Travel */
 
-$this->title = 'Create Travel';
-$this->params['breadcrumbs'][] = ['label' => 'Travels', 'url' => ['index']];
+$this->title = 'Tambah Data Travel';
+$this->params['breadcrumbs'][] = ['label' => 'Data Travel', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="travel-create">

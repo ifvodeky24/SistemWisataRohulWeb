@@ -18,32 +18,36 @@ class AdminController extends Controller
      */
     public function behaviors()
     {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
+        return array_merge(
+            parent::behaviors(),
+            [
+                'verbs' => [
+                    'class' => VerbFilter::className(),
+                    'actions' => [
+                        'delete' => ['POST'],
+                    ],
                 ],
-            ],
-        ];
+            ]
+        );
     }
 
     /**
-     * Lists all User models.
+     * Lists all Atm models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $model = (new \Yii\db\query())
-            ->select('*')
-            ->from('tb_admin')
-            ->all();
+        $searchModel = new AdminSearch();
+        $dataProvider = $searchModel->search($this->request->queryParams);
 
-        return $this->render('index', ['model' => $model,]);
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
     }
 
     /**
-     * Displays a single User model.
+     * Displays a single Atm model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -56,7 +60,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Creates a new User model.
+     * Creates a new Atm model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
@@ -64,27 +68,12 @@ class AdminController extends Controller
     {
         $model = new User();
 
-        if ($model->load(Yii::$app->request->post())) {
-            $passwordHash = Yii::$app->getSecurity()->generatePasswordHash($model->password);
-            $authKey = Yii::$app->security->generateRandomString();
-            $accesToken = Yii::$app->security->generateRandomString();
-
-            $model->password = $passwordHash;
-            $model->authKey = $authKey;
-            $model->accesToken = $accesToken;
-
-            $model->foto = UploadedFile::getInstance($model, 'foto');
-            if ($model->foto) {
-                $photos = $model->foto->name;
-                if ($model->foto->saveAs('files/images/admin_images/' . $photos)) {
-                    $model->foto = $photos;
-                }
+        if ($this->request->isPost) {
+            if ($model->load($this->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id_atm]);
             }
-
-            $model->save(false);
-
-            Yii::$app->getSession()->setFlash('success', 'Data Tersimpan');
-            return $this->redirect(['view', 'id' => $model->id_admin]);
+        } else {
+            $model->loadDefaultValues();
         }
 
         return $this->render('create', [
@@ -93,7 +82,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Updates an existing User model.
+     * Updates an existing Atm model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -103,31 +92,8 @@ class AdminController extends Controller
     {
         $model = $this->findModel($id);
 
-        $old_photo_user = $model->foto;
-
-        if ($model->load(Yii::$app->request->post())) {
-            $passwordHash = Yii::$app->getSecurity()->generatePasswordHash($model->password);
-            $authKey = Yii::$app->security->generateRandomString();
-            $accesToken = Yii::$app->security->generateRandomString();
-
-            $model->password = $passwordHash;
-            $model->authKey = $authKey;
-            $model->accesToken = $accesToken;
-            
-            $model->foto = UploadedFile::getInstance($model, 'foto');
-            if ($model->foto) {
-                $pp = $model->foto->name;
-                if ($model->foto->saveAs('files/images/admin_images/' . $pp)) {
-                    $model->foto = $pp;
-                }
-            }
-            if (empty($model->foto)) {
-                $model->foto = $old_photo_user;
-            }
-            $model->save(false);
-
-            Yii::$app->getSession()->setFlash('success', 'Data Tersimpan');
-            return $this->redirect(['view', 'id' => $model->id_admin]);
+        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->id_atm]);
         }
 
         return $this->render('update', [
@@ -136,7 +102,7 @@ class AdminController extends Controller
     }
 
     /**
-     * Deletes an existing User model.
+     * Deletes an existing Atm model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -150,10 +116,10 @@ class AdminController extends Controller
     }
 
     /**
-     * Finds the User model based on its primary key value.
+     * Finds the Atm model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return User the loaded model
+     * @return Atm the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)

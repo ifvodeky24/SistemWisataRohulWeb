@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Atm */
 
-$this->title = 'Create Atm';
-$this->params['breadcrumbs'][] = ['label' => 'Atms', 'url' => ['index']];
+$this->title = 'Tambah Data ATM';
+$this->params['breadcrumbs'][] = ['label' => 'Data ATM', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="atm-create">

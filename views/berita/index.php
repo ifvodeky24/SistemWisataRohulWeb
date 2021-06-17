@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\BeritaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Beritas';
+$this->title = 'Data Berita';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="berita-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Berita', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Berita', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id_berita',
             'judul_berita',
-            'nama_pengarang',
+            // 'nama_pengarang',
             'informasi',
             [
                 'label'=>'foto',

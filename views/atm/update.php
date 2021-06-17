@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Atm */
 
-$this->title = 'Update Atm: ' . $model->id_atm;
-$this->params['breadcrumbs'][] = ['label' => 'Atms', 'url' => ['index']];
+$this->title = 'Perbarui Data ATM: ' . $model->id_atm;
+$this->params['breadcrumbs'][] = ['label' => 'Data ATM', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_atm, 'url' => ['view', 'id' => $model->id_atm]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Perbarui';
 ?>
 <div class="atm-update">
 

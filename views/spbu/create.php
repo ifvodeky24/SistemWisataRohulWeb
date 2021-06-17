@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Spbu */
 
-$this->title = 'Create Spbu';
-$this->params['breadcrumbs'][] = ['label' => 'Spbus', 'url' => ['index']];
+$this->title = 'Tambah Data SPBU';
+$this->params['breadcrumbs'][] = ['label' => 'Data SPBU', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="spbu-create">

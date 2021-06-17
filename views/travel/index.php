@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\TravelSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Travels';
+$this->title = 'Data Travel';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="travel-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Travel', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Travel', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -30,9 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
             'nama_travel',
             'pemilik',
             'alamat',
-            'latitude',
+            // 'latitude',
             //'longitude',
-            //'foto',
+            'foto',
             //'informasi',
             //'createdAt',
             //'updatedAt',

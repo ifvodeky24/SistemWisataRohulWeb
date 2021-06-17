@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Spbu */
 
-$this->title = 'Update Spbu: ' . $model->id_spbu;
-$this->params['breadcrumbs'][] = ['label' => 'Spbus', 'url' => ['index']];
+$this->title = 'Perbarui Data SPBU: ' . $model->id_spbu;
+$this->params['breadcrumbs'][] = ['label' => 'Data SPBU', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_spbu, 'url' => ['view', 'id' => $model->id_spbu]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Perbarui';
 ?>
 <div class="spbu-update">
 

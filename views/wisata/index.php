@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\WisataSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Wisatas';
+$this->title = 'Data Wisata';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wisata-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Wisata', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Wisata', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'alamat',
             'kelurahan',
             //'kecamatan',
-            //'foto',
+            'foto',
             //'latitude',
             //'longitude',
             //'createdAt',

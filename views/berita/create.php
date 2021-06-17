@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Berita */
 
-$this->title = 'Create Berita';
-$this->params['breadcrumbs'][] = ['label' => 'Beritas', 'url' => ['index']];
+$this->title = 'Tambah Data Berita';
+$this->params['breadcrumbs'][] = ['label' => 'Data Berita', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="berita-create">

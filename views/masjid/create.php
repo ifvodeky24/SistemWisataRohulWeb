@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Masjid */
 
-$this->title = 'Create Masjid';
-$this->params['breadcrumbs'][] = ['label' => 'Masjids', 'url' => ['index']];
+$this->title = 'Tambah Data Masjid';
+$this->params['breadcrumbs'][] = ['label' => 'Data Masjid', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="masjid-create">

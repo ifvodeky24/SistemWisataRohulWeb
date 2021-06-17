@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Wisata */
 
-$this->title = 'Create Wisata';
-$this->params['breadcrumbs'][] = ['label' => 'Wisatas', 'url' => ['index']];
+$this->title = 'Tambah Data Wisata';
+$this->params['breadcrumbs'][] = ['label' => 'Data Wisata', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="wisata-create">

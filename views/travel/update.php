@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Travel */
 
-$this->title = 'Update Travel: ' . $model->id_travel;
-$this->params['breadcrumbs'][] = ['label' => 'Travels', 'url' => ['index']];
+$this->title = 'Perbarui Data Travel: ' . $model->id_travel;
+$this->params['breadcrumbs'][] = ['label' => 'Data Travel', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_travel, 'url' => ['view', 'id' => $model->id_travel]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Perbarui';
 ?>
 <div class="travel-update">
 

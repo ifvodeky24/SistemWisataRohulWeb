@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Penginapan */
 
-$this->title = 'Create Penginapan';
-$this->params['breadcrumbs'][] = ['label' => 'Penginapans', 'url' => ['index']];
+$this->title = 'Tambah Data Penginapan';
+$this->params['breadcrumbs'][] = ['label' => 'Data Penginapan', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="penginapan-create">
