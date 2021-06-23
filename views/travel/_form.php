@@ -10,24 +10,26 @@ use yii\widgets\ActiveForm;
 
 <div class="travel-form">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 
     <?= $form->field($model, 'nama_travel')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'pemilik')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'alamat')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'kelurahan')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'kecamatan')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'latitude')->textInput() ?>
 
     <?= $form->field($model, 'longitude')->textInput() ?>
 
-    <?= $form->field($model, 'foto')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'foto')->fileInput() ?>
 
     <?= $form->field($model, 'informasi')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Simpan', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

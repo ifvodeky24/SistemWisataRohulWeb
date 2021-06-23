@@ -14,6 +14,7 @@ use Yii;
  * @property string $kelurahan
  * @property string $kecamatan
  * @property string $foto
+ * @property string $informasi
  * @property float $latitude
  * @property float $longitude
  * @property string $createdAt
@@ -35,11 +36,12 @@ class Wisata extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama_wisata', 'kategori', 'alamat', 'kelurahan', 'kecamatan', 'foto', 'latitude', 'longitude'], 'required'],
+            [['nama_wisata', 'kategori', 'alamat', 'kelurahan', 'kecamatan', 'foto', 'latitude', 'longitude', 'informasi'], 'required'],
             [['kategori'], 'string'],
             [['latitude', 'longitude'], 'number'],
             [['createdAt', 'updatedAt'], 'safe'],
             [['nama_wisata', 'alamat', 'kelurahan', 'kecamatan', 'foto'], 'string', 'max' => 50],
+            [['informasi'], 'string', 'max' => 100],
         ];
     }
 
@@ -56,6 +58,7 @@ class Wisata extends \yii\db\ActiveRecord
             'kelurahan' => 'Kelurahan',
             'kecamatan' => 'Kecamatan',
             'foto' => 'Foto',
+            'informasi' => 'Informasi',
             'latitude' => 'Latitude',
             'longitude' => 'Longitude',
             'createdAt' => 'Created At',

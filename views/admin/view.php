@@ -35,7 +35,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'nama_lengkap',
             'authKey',
             'accessToken',
-            'foto',
+            [
+                'label'=>'foto',
+                'format'=>'raw',
+                'value' => function($data){
+                    $url = Yii::$app->getHomeUrl(). "/files/images/admin_images/" .$data['foto'];
+                    return Html::img($url, ['alt'=>'Gambar Tidak Ada', 'class'=>'img-circle user-img',
+                        'height'=>'100', 'width'=>'100', 'style'=>'object-fit: cover']);
+                }
+            ],
             'createdAt',
             'updatedAt',
         ],

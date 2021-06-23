@@ -46,7 +46,9 @@ AppAsset::register($this);
     <div class="wrapper">
       <!-- Preloader -->
       <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+        <?= 
+              Html::img('@web/files/images/logo.png', ['class' => 'animation__shake', 'alt' => 'Logo', 'height' => 60 , 'width' => 60])
+        ?>
       </div>
 
       <!-- Navbar -->
@@ -84,7 +86,10 @@ AppAsset::register($this);
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="<?= Yii::$app->request->baseUrl; ?>/site" class="brand-link">
-          <img src="AdminLTE/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+          <?= 
+              Html::img('@web/files/images/logo.png', ['class' => 'brand-image img-circle elevation-3', 'alt' => 'Logo'])
+          ?>
+
           <span class="brand-text font-weight-light">Wisata Rohul</span>
         </a>
 

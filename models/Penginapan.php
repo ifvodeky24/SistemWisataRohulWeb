@@ -10,7 +10,8 @@ use Yii;
  * @property int $id_penginapan
  * @property string $nama_penginapan
  * @property string $alamat
- * @property string $pemilik
+ * @property string $kelurahan
+ * @property string $kecamatan
  * @property float $latitude
  * @property float $longitude
  * @property string $foto
@@ -34,10 +35,10 @@ class Penginapan extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama_penginapan', 'alamat', 'pemilik', 'latitude', 'longitude', 'foto', 'informasi'], 'required'],
+            [['nama_penginapan', 'alamat', 'kelurahan', 'kecamatan', 'latitude', 'longitude', 'foto', 'informasi'], 'required'],
             [['latitude', 'longitude'], 'number'],
             [['createdAt', 'updatedAt'], 'safe'],
-            [['nama_penginapan', 'alamat', 'pemilik', 'foto'], 'string', 'max' => 50],
+            [['nama_penginapan', 'alamat', 'kelurahan', 'kecamatan', 'foto'], 'string', 'max' => 50],
             [['informasi'], 'string', 'max' => 100],
         ];
     }
@@ -51,7 +52,8 @@ class Penginapan extends \yii\db\ActiveRecord
             'id_penginapan' => 'Id Penginapan',
             'nama_penginapan' => 'Nama Penginapan',
             'alamat' => 'Alamat',
-            'pemilik' => 'Pemilik',
+            'kelurahan' => 'Kelurahan',
+            'kecamatan' => 'Kecamatan',
             'latitude' => 'Latitude',
             'longitude' => 'Longitude',
             'foto' => 'Foto',

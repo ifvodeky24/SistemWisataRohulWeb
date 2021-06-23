@@ -18,7 +18,7 @@ class PenginapanSearch extends Penginapan
     {
         return [
             [['id_penginapan'], 'integer'],
-            [['nama_penginapan', 'alamat', 'pemilik', 'foto', 'informasi', 'createdAt', 'updatedAt'], 'safe'],
+            [['nama_penginapan', 'alamat', 'kelurahan', 'kecamatan', 'foto', 'informasi', 'createdAt', 'updatedAt'], 'safe'],
             [['latitude', 'longitude'], 'number'],
         ];
     }
@@ -68,7 +68,8 @@ class PenginapanSearch extends Penginapan
 
         $query->andFilterWhere(['like', 'nama_penginapan', $this->nama_penginapan])
             ->andFilterWhere(['like', 'alamat', $this->alamat])
-            ->andFilterWhere(['like', 'pemilik', $this->pemilik])
+            ->andFilterWhere(['like', 'kelurahan', $this->kelurahan])
+            ->andFilterWhere(['like', 'kecamatan', $this->kecamatan])
             ->andFilterWhere(['like', 'foto', $this->foto])
             ->andFilterWhere(['like', 'informasi', $this->informasi]);
 

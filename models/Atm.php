@@ -14,6 +14,7 @@ use Yii;
  * @property string $kecamatan
  * @property float $latitude
  * @property float $longitude
+ * @property string $foto
  * @property string $informasi
  * @property string $createdAt
  * @property string $updatedAt
@@ -34,10 +35,10 @@ class Atm extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama_atm', 'alamat', 'kelurahan', 'kecamatan', 'latitude', 'longitude', 'informasi'], 'required'],
+            [['nama_atm', 'alamat', 'kelurahan', 'kecamatan', 'latitude', 'longitude', 'informasi', 'foto'], 'required'],
             [['latitude', 'longitude'], 'number'],
             [['createdAt', 'updatedAt'], 'safe'],
-            [['nama_atm', 'alamat', 'kelurahan', 'kecamatan'], 'string', 'max' => 50],
+            [['nama_atm', 'alamat', 'kelurahan', 'kecamatan', 'foto'], 'string', 'max' => 50],
             [['informasi'], 'string', 'max' => 100],
         ];
     }
@@ -55,6 +56,7 @@ class Atm extends \yii\db\ActiveRecord
             'kecamatan' => 'Kecamatan',
             'latitude' => 'Latitude',
             'longitude' => 'Longitude',
+            'foto' => 'Foto',
             'informasi' => 'Informasi',
             'createdAt' => 'Created At',
             'updatedAt' => 'Updated At',

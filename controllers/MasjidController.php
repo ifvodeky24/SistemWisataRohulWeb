@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use Yii;
+use yii\web\UploadedFile;
 use app\models\Masjid;
 use app\models\MasjidSearch;
 use yii\web\Controller;
@@ -68,12 +70,18 @@ class MasjidController extends Controller
     {
         $model = new Masjid();
 
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id_masjid]);
+        if ($model->load(Yii::$app->request->post())) {
+            $model->foto = UploadedFile::getInstance($model, 'foto');
+            if ($model->foto) {
+                $photos = $model->foto->name;
+                if ($model->foto->saveAs('files/images/masjid_images/' . $photos)) {
+                    $model->foto = $photos;
+                }
             }
-        } else {
-            $model->loadDefaultValues();
+
+            $model->save();
+
+            return $this->redirect(['view', 'id' => $model->id_masjid]);
         }
 
         return $this->render('create', [
@@ -92,7 +100,22 @@ class MasjidController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
+        $old_photo_user = $model->foto;
+
+        if ($model->load(Yii::$app->request->post()) ) {
+            $model->foto = UploadedFile::getInstance($model, 'foto');
+            if($model->foto){
+                $pp = $model->foto->name;
+                if($model->foto->saveAs('files/images/masjid_images/' .$pp)) {
+                   $model->foto =$pp;
+                }
+            }
+            if (empty($model->foto)){
+                $model->foto = $old_photo_user;
+            }
+            $model->save(false);
+
+            Yii::$app->getSession()->setFlash('success','Data Tersimpan');
             return $this->redirect(['view', 'id' => $model->id_masjid]);
         }
 

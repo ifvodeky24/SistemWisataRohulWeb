@@ -9,8 +9,9 @@ use Yii;
  *
  * @property int $id_travel
  * @property string $nama_travel
- * @property string $pemilik
  * @property string $alamat
+ * @property string $kelurahan
+ * @property string $kecamatan
  * @property float $latitude
  * @property float $longitude
  * @property string $foto
@@ -34,10 +35,10 @@ class Travel extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nama_travel', 'pemilik', 'alamat', 'latitude', 'longitude', 'foto', 'informasi'], 'required'],
+            [['nama_travel',  'kelurahan', 'kecamatan', 'alamat', 'latitude', 'longitude', 'foto', 'informasi'], 'required'],
             [['latitude', 'longitude'], 'number'],
             [['createdAt', 'updatedAt'], 'safe'],
-            [['nama_travel', 'pemilik', 'alamat', 'foto'], 'string', 'max' => 50],
+            [['nama_travel', 'kelurahan', 'kecamatan', 'alamat', 'foto'], 'string', 'max' => 50],
             [['informasi'], 'string', 'max' => 100],
         ];
     }
@@ -50,8 +51,9 @@ class Travel extends \yii\db\ActiveRecord
         return [
             'id_travel' => 'Id Travel',
             'nama_travel' => 'Nama Travel',
-            'pemilik' => 'Pemilik',
             'alamat' => 'Alamat',
+            'kelurahan' => 'Kelurahan',
+            'kecamatan' => 'Kecamatan',
             'latitude' => 'Latitude',
             'longitude' => 'Longitude',
             'foto' => 'Foto',

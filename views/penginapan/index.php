@@ -29,10 +29,19 @@ $this->params['breadcrumbs'][] = $this->title;
             'id_penginapan',
             'nama_penginapan',
             'alamat',
-            'pemilik',
+            'kelurahan',
+            'kecamatan',
             // 'latitude',
             //'longitude',
-            'foto',
+            [
+                'label'=>'foto',
+                'format'=>'raw',
+                'value' => function($data){
+                    $url = Yii::$app->getHomeUrl(). "/files/images/penginapan_images/" .$data['foto'];
+                    return Html::img($url, ['alt'=>'Gambar Tidak Ada', 'class'=>'img-circle user-img',
+                        'height'=>'100', 'width'=>'100', 'style'=>'object-fit: cover']);
+                }
+            ],
             //'informasi',
             //'createdAt',
             //'updatedAt',

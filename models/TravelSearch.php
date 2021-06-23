@@ -18,7 +18,7 @@ class TravelSearch extends Travel
     {
         return [
             [['id_travel'], 'integer'],
-            [['nama_travel', 'pemilik', 'alamat', 'foto', 'informasi', 'createdAt', 'updatedAt'], 'safe'],
+            [['nama_travel', 'kelurahan', 'kecamatan', 'alamat', 'foto', 'informasi', 'createdAt', 'updatedAt'], 'safe'],
             [['latitude', 'longitude'], 'number'],
         ];
     }
@@ -67,8 +67,9 @@ class TravelSearch extends Travel
         ]);
 
         $query->andFilterWhere(['like', 'nama_travel', $this->nama_travel])
-            ->andFilterWhere(['like', 'pemilik', $this->pemilik])
             ->andFilterWhere(['like', 'alamat', $this->alamat])
+            ->andFilterWhere(['like', 'kelurahan', $this->kelurahan])
+            ->andFilterWhere(['like', 'kecamatan', $this->kecamatan])
             ->andFilterWhere(['like', 'foto', $this->foto])
             ->andFilterWhere(['like', 'informasi', $this->informasi]);
 

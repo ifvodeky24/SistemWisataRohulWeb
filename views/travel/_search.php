@@ -19,11 +19,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nama_travel') ?>
 
-    <?= $form->field($model, 'pemilik') ?>
-
     <?= $form->field($model, 'alamat') ?>
 
-    <?= $form->field($model, 'latitude') ?>
+    <?= $form->field($model, 'kelurahan') ?>
+
+    <?= $form->field($model, 'kecamatan') ?>
 
     <?php // echo $form->field($model, 'longitude') ?>
 
